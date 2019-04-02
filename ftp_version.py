@@ -1,3 +1,5 @@
+import requests
+# find and save the current Github release
 html = str(
     requests.get('https://github.com/kiali/kiali/releases/latest')
     .content)
