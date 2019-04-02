@@ -1,0 +1,36 @@
+sudo: required
+
+os: 
+  - linux-ppc64le
+  
+services:
+- docker
+
+language: go
+
+go:
+- 1.9.4
+
+before_script:
+  - cd $GOPATH/src/github.com
+  - mkdir kiali
+  - cd kiali
+  - git clone https://github.com/kiali/kiali.git
+  - cd kiali 
+ 
+install:   
+ - wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/glide/glide-0.13.1
+ - mv glide-0.13.1 glide
+ - sudo chmod 755 glide
+ - sudo mv glide /usr/bin/glide
+ - glide
+
+script:
+  - ls
+  - make build
+  - make test
+  - ls
+  - cd $GOPATH/bin
+  - ls
+  - sudo chmod 777 kiali
+  - ./kiali
