@@ -12,6 +12,7 @@ go:
 - 1.9.4
 
 before_script:
+  - pwd
   - cd $GOPATH/src/github.com
   - mkdir kiali
   - cd kiali
@@ -20,7 +21,7 @@ before_script:
   - rm Makefile
   - cd - cd $GOPATH/
   - cd ..
-  -  mv Makafile $GOPATH/src/github.com/kiali/kiali
+  - mv Makafile $GOPATH/src/github.com/kiali/kiali
   - cd $GOPATH/src/github.com/kiali/kiali
  
 install:   
