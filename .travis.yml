@@ -1,8 +1,6 @@
+os: linux-ppc64le
+dist: xenial
 sudo: required
-
-os: 
-  - linux-ppc64le
-  
 services:
   - docker
 
@@ -14,8 +12,7 @@ go:
 install:   
   - sudo apt-get update
   - sudo apt-get install -y lftp
-  - alias python=/usr/local/bin/python3
-  - python ftp_version.py
+  - python3 ftp_version.py
 
 script:
   - bash build.sh
