@@ -13,6 +13,7 @@ go:
 
 before_script:
   - pwd
+  - ls
   - cd $GOPATH/src/github.com
   - mkdir kiali
   - cd kiali
