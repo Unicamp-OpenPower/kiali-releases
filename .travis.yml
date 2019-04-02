@@ -19,7 +19,7 @@ before_script:
   - cd kiali
   - wget https://github.com/kiali/kiali/archive/v0.16.2.zip
   - unzip v0.16.2.zip
-  - mv v0.16.2 kiali
+  - mv kiali-0.16.2 kiali
   - cd kiali 
   - rm Makefile
   - mv /home/travis/gopath/src/github.com/Unicamp-OpenPower/kiali-releases/Makefile $GOPATH/src/github.com/kiali/kiali/Makefile
