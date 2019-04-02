@@ -4,18 +4,18 @@ os:
   - linux-ppc64le
   
 services:
-- docker
+  - docker
 
 language: go
 
 go:
-- 1.9.4
+  - 1.9.4
 
 install:   
- - sudo apt update
- - sudo apt install lftp
- - alias python=/usr/local/bin/python3
- - python ftp_version.py
+  - sudo apt-get update
+  - sudo apt-get install -y lftp
+  - alias python=/usr/local/bin/python3
+  - python ftp_version.py
 
 script:
   - bash build.sh
