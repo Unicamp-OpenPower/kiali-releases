@@ -17,6 +17,11 @@ before_script:
   - cd kiali
   - git clone https://github.com/kiali/kiali.git
   - cd kiali 
+  - rm Makefile
+  - cd - cd $GOPATH/
+  - cd ..
+  -  mv Makafile $GOPATH/src/github.com/kiali/kiali
+  - cd $GOPATH/src/github.com/kiali/kiali
  
 install:   
  - wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/glide/glide-0.13.1
