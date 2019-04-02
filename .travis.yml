@@ -1,3 +1,16 @@
+matrix:
+  include:
+  - env: version=0.16.1
+  - env: version=0.16.0
+  - env: version=0.15.0
+  - env: version=0.14.0
+  - env: version=0.13.0
+  - env: version=0.12.0
+  - env: version=0.11.0
+  - env: version=0.10.1
+  - env: version=0.10.0
+  - env: version=0.9.1
+
 sudo: required
 
 os: 
@@ -17,9 +30,9 @@ before_script:
   - cd $GOPATH/src/github.com
   - mkdir kiali
   - cd kiali
-  - wget https://github.com/kiali/kiali/archive/v0.16.2.zip
-  - unzip v0.16.2.zip
-  - mv kiali-0.16.2 kiali
+  - wget https://github.com/kiali/kiali/archive/v$version.zip
+  - unzip v$version.zip
+  - mv kiali-$version kiali
   - cd kiali 
   - rm Makefile
   - mv /home/travis/gopath/src/github.com/Unicamp-OpenPower/kiali-releases/Makefile $GOPATH/src/github.com/kiali/kiali/Makefile
@@ -30,6 +43,8 @@ install:
  - sudo chmod 755 glide
  - sudo mv glide /usr/bin/glide
  - glide
+ - sudo apt update
+ - sudo apt install lftp
 
 script:
   - ls
@@ -37,6 +52,5 @@ script:
   - make test
   - ls
   - cd $GOPATH/bin
-  - ls
-  - sudo chmod 777 kiali
-  - ./kiali
+  - mv kiali kiali-$version
+  - lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/kiali kiali-$version"
