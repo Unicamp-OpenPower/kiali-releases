@@ -1,5 +1,5 @@
 os: linux
-arch: ppc63le
+arch: ppc64le
 dist: bionic
 language: go
 sudo: required
