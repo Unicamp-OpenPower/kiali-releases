@@ -27,7 +27,7 @@ install:
   - cat github_version.txt
 
 script:
-  #- bash build.sh
+  - bash build.sh
 
 notifications:
   slack:
