@@ -1,6 +1,6 @@
 #github_version=$(cat github_version.txt)
 #ftp_version=$(cat ftp_version.txt)
-github_version=1.5.0
+github_version=1.6.0
 ftp_version=1.2.0
 del_version=$(cat delete_version.txt)
 
@@ -22,15 +22,16 @@ then
     mv /home/travis/gopath/src/github.com/Unicamp-OpenPower/kiali-releases/Makefile $GOPATH/src/github.com/kiali/kiali/Makefile
     make build
     cd $GOPATH/bin
-    mv kiali kiali-$github_version
     ls
-    ./kiali-$github_version -help
+    #mv kiali kiali-$github_version
+    #ls
+    #./kiali-$github_version -help
     
     #if [[ $github_version > $ftp_version ]]
     #then
         #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/kiali/latest kiali-$github_version"
         #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /ppc64el/kiali/latest/kiali-$ftp_version" 
     #fi
-    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/kiali kiali-$github_version"
+    #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/kiali kiali-$github_version"
     #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /ppc64el/kiali/kiali-$del_version" 
 fi
