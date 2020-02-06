@@ -22,10 +22,12 @@ install:
   - sudo apt-get update
   - sudo apt-get install -y lftp
   - python3 ftp_version.py
+  - echo $git-version
   - echo $git-version > github_version.txt
+  - cat github_version.txt
 
 script:
-  - bash build.sh
+  #- bash build.sh
 
 notifications:
   slack:
