@@ -1,6 +1,7 @@
-github_version=$(cat github_version.txt)
-ftp_version=$(cat ftp_version.txt)
-ftp_version=1.1.1
+#github_version=$(cat github_version.txt)
+#ftp_version=$(cat ftp_version.txt)
+github_version=1.4.2
+ftp_version=1.2.0
 del_version=$(cat delete_version.txt)
 
 if [ $github_version != $ftp_version ]
@@ -25,11 +26,11 @@ then
     ls
     ./kiali-$github_version -help
     
-    if [[ $github_version > $ftp_version ]]
-    then
-        lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/kiali/latest kiali-$github_version"
-        lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /ppc64el/kiali/latest/kiali-$ftp_version" 
-    fi
+    #if [[ $github_version > $ftp_version ]]
+    #then
+        #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/kiali/latest kiali-$github_version"
+        #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /ppc64el/kiali/latest/kiali-$ftp_version" 
+    #fi
     lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/kiali kiali-$github_version"
-    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /ppc64el/kiali/kiali-$del_version" 
+    #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /ppc64el/kiali/kiali-$del_version" 
 fi
