@@ -15,3 +15,10 @@ install:
 
 script:
   - bash build.sh
+
+notifications:
+  slack:
+    rooms:
+      - secure: "5zI9V9Z+z7+dATPSqWalk+pJCoBSXVdE8sQI18ZcKHJt2NSNFaPvSKH040sfYwSg1Schs14gXoTBE58eC+QFB+mm/znPlscshUv5LiU23L/uR0cCJHPpqN3rrLuhj+DzgwJmMj7BQ+Yael6tbWXz+mHecPLhkZYCSY7Q0IN6s1lerCMzFMgJuh7p5PPj+8XzW/+r7Yal/cU0lrgRGqINk76Intspm6nqNtVb9HuA3ORkjjYJGeXBPOxVVnzDr7T2bJkXsa9Cct8U0yGNNauymue8TC8S4kJc+CiKJhKDq7JCfK8NEbanKShbn5+8vKUVihF/Oo2jnFvUMln9Vxyr5bCl0g9JpelwzXVcGhW9ne3N2ipwC/PEccBaw35ON6c8Hvxdg9NZczahwD1seG5G4EByu1BSXPW6ZsujQ9090opb8mXCoOED0wzi2pniK6zF7cmxfMIl8xV2bW4SUmsQRJ+FjtqSxhBks9oMQVCbD1qp4szzYvKNwykL7q4+hXsfa57s/XvEswgGSIOfOrlff148V8Z62okoOEtDBgBTiZ0dZFLATUE19Kn9uU4LifXf47v50LGBjGotJ++e1szwz3VbtJyzRpYOBK0HT31seBqQ3KO7nWXPHPmuuhknfbLArxo/Nd6aUz1e7IlgdGvHwC8SjA70bUQl7W0+AYEJQgI="
+    on_success: change
+    on_failure: change
