@@ -8,23 +8,10 @@ sudo: required
 
 go: 1.13.x
 
-jobs:
-  include:
-    - env: version=1.8.0
-    - env: version=1.9.0
-    - env: version=1.9.1
-    - env: version=1.10.0
-    - env: version=1.11.0
-    - env: version=1.12.0
-    - env: version=1.13.0
-
 install:   
   - sudo apt-get update
   - sudo apt-get install -y lftp
   - python3 ftp_version.py
-  - echo $version
-  - echo $version > github_version.txt
-  - cat github_version.txt
 
 script:
   - bash build.sh
