@@ -1,13 +1,12 @@
-os: linux-ppc64le
-dist: xenial
-sudo: required
-services:
-  - docker
-
+os: linux
+arch: ppc63le
+dist: bionic
 language: go
+sudo: required
+#services:
+#  - docker
 
-go:
-  - 1.9.4
+go: 1.13.x
 
 install:   
   - sudo apt-get update
