@@ -21,9 +21,9 @@ then
     mv /home/travis/gopath/src/github.com/Unicamp-OpenPower/kiali-releases/Makefile $GOPATH/src/github.com/kiali/kiali/Makefile
     make build
     cd $GOPATH/bin
-    ls
     mv kiali kiali-$github_version
     ls
+    ./kiali-$github_version -help
     
     if [[ $github_version > $ftp_version ]]
     then
