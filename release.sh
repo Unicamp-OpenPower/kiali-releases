@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 github_version=$(cat github_version.txt)
 ftp_version=$(cat ftp_version.txt)
-github_version=1.22.0
+github_version=1.22.1
 LOCALPATH=$GOPATH/src/github.com/kiali/kiali
 BINPATH=$GOPATH/bin
 
