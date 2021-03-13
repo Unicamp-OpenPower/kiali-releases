@@ -11,6 +11,7 @@ go: 1.14.x
 install:
   - sudo apt-get update
   - sudo apt-get install lftp rpm make gcc
+  - printf "set ssl:verify-certificate false" >> ~/.lftprc
   - python3 ftp_version.py
 
 script:
