@@ -1,6 +1,6 @@
 os: linux
 arch: ppc64le
-dist: bionic
+dist: focal
 language: go
 sudo: required
 #services:
