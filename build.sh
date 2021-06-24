@@ -25,5 +25,5 @@ then
         lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /ppc64el/kiali/latest/kiali-$ftp_version"
     fi
     lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/kiali kiali-$github_version"
-    lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /ppc64el/kiali/kiali-$del_version"
+    #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /ppc64el/kiali/kiali-$del_version"
 fi
