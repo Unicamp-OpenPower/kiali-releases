@@ -12,7 +12,7 @@ file.close()
 # find and save the current Bazel version on FTP server
 html = str(
     requests.get(
-        'https://oplab9.parqtec.unicamp.br/pub/ppc64el/kiali/'
+        'https://oplab9.parqtec.unicamp.br/pub/ppc64el/kiali/latest'
     ).content)
 index = html.rfind('kiali-')
 ftp_version = html[index + 6:index + 12].replace('<', '').replace(' ', '').replace('\\', '')
