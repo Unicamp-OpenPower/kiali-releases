@@ -17,7 +17,7 @@ then
     cd $GOPATH/bin
     mv kiali kiali-$github_version
     ls
-    ./kiali-$github_version -help
+    ./kiali-$github_version version
 
     if [[ $github_version != $ftp_version ]]
     then
