@@ -4,7 +4,7 @@ html = str(
     requests.get('https://github.com/kiali/kiali/releases/latest')
     .content)
 index = html.find('Release ')
-github_version = html[index + 14:index + 20].replace('<', '').replace(' ', '').replace('\\', '')
+github_version = html[index + 15:index + 21].replace('<', '').replace(' ', '').replace('\\', '')
 file = open('github_version.txt', 'w')
 file.writelines(github_version)
 file.close()
